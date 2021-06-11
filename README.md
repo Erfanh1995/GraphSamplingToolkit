@@ -20,6 +20,8 @@ The `<mode>` string will be used to determine which computations to do. Each of 
 
 Each of these steps creates a file in evals directory in `<dataset_name>` so for instance if you have previously used `L` on two maps you can skip it in the future computations for said two maps.   
 
+Your input maps have to be in the same coordinate system. Please take a look at the example input files. ***input files must be in Lon Lat foramt ***  
+
 
 # Parameters
 Parameters | Note
@@ -68,7 +70,7 @@ python3 MapCropper.py
 
 # Visualizer
 
-***In order to properly run this tool, the file structure should look as it is in the data folder.***   
+***In order to properly run this tool, the file hierarchy and file names should follow the same structure in the provided `data` folder.***   
 This tool can be used to visualize reconstructed maps and their precision/recall evaluations.    
 For the background map/Contextily to work you need a working internet connection.    
 `Visualizer.py` follows the same directories as `mapcompare.py`.       
