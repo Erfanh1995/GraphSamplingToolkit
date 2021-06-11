@@ -35,7 +35,9 @@ The `<compare_mode>` parameter will be used to determine which matching algorith
 All-in-One example:
 ```bash
 python3 mapcompare.py data chicago james LCR -i 10 -b 30 -c wmm -t 10 -f
-```
+```   
+For more datasets and maps visit [mapconstruction.org](http://www.mapconstruction.org/)    
+      
 
 # Dependency
 * [Rtree](https://pypi.org/project/Rtree/)
