@@ -42,6 +42,8 @@ python3 mapcompare.py data chicago james LCR -i 10 -b 30 -c wmm -t 10 -f
 * [Networkx](https://pypi.org/project/networkx/)
 
 
+---
+
 
 # Map Cropper
 
@@ -59,6 +61,8 @@ python3 MapCropper.py
 * [leuvenmapmatching](https://pypi.org/project/leuvenmapmatching/)
 
 
+---
+
 
 # Visualizer
 
@@ -70,7 +74,7 @@ Each `<dataset_name>` needs a `<dataset_name>.yml` file containing its correspon
 
 
 ![Visualizer](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/Legend_picking.gif)      
-
+  
 ```bash
 python3 Visualizer.py
 ```
@@ -84,3 +88,10 @@ python3 Visualizer.py
 * [PyQt5](https://pypi.org/project/PyQt5/) (user interface)
 * [PyYAML](https://pypi.org/project/PyYAML/) (reading the config file)
 * [Contextily](https://pypi.org/project/contextily/) (background map)
+
+
+---
+
+# Contributing
+
+If you are interested in contributing to this project feel free to do a pull request or contact me via email.
