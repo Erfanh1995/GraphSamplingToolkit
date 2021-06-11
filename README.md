@@ -1,8 +1,8 @@
 # Graph Sampling Evaluation
 
 Graph sampling is a method for map comparison. This program takes two graphs as inputs and returns precision, recall and f-score values quantifying their similarities.
-![alt-text](https://github.com/Erfanh1995/GraphSamplingToolkit/figs/teaser.jpg)
-![alt-text](https://github.com/Erfanh1995/GraphSamplingToolkit/figs/roadmap.png)
+![Athens_small OSM vs TeleAtlas](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/teaser.jpg)
+![Berlin_small OSM vs TeleAtlas](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/roadmap.png)
 
 ```bash
 python3 mapcompare.py <data_folder> <dataset_name> <solution_name> <mode>
@@ -45,7 +45,7 @@ python3 mapcompare.py data chicago james LCR -i 10 -b 30 -c wmm -t 10 -f
 # Map Cropper
 
 MapCropper.py follows the same directories as mapcompare.py you can crop ground truth maps located in <dataset_name>/groundtruth using hidden markov matching. The code only asks for <dataset_name> in data/. You will need a trajectories folder in <dataset_name> containing GPS trajectories.
-![Chicago OSM cropped (red)](https://github.com/Erfanh1995/GraphSamplingToolkit/figs/hmm.png)
+![Chicago OSM cropped (red)](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/hmm.png)
 
 
 ```bash
