@@ -1,23 +1,25 @@
 # Graph Sampling Evaluation
 
-Graph sampling is a method for map comparison. This program takes two graphs as inputs and returns precision, recall and f-score values quantifying their similarities.
+Graph sampling is a method for map comparison. This program takes two graphs as inputs and returns precision, recall and f-score values quantifying their similarities.   
+
 ![Berlin_small OSM vs TeleAtlas](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/roadmap.png)
 
 ```bash
 python3 mapcompare.py <data_folder> <dataset_name> <solution_name> <mode>
-```
+```   
 `<data_folder>` is the path to the data folder e.g. `data`
 
 `<dataset_name>` name of the dataset folder inside `<data_folder>` e.g. `athens_small`
 
 `<solution_name>` name of the reconstructed map in `<data_folder>/<dataset_name>/algorithm` directory
 
-The `<mode>` string will be used to determine which computations to do. Each of the following computations corresponds with a letter:
+The `<mode>` string will be used to determine which computations to do. Each of the following computations corresponds with a letter:  
 - Computing sampling starting points/finding connected components: `L`
 - Comparing map against ground-truth/map1 against map2: `C`
 - Evaluating results/statistics: `R`
 
-Each of these steps creates a file in evals directory in `<dataset_name>` so for instance if you have previously used `L` on two maps you can skip it in the future computations for said two maps.
+Each of these steps creates a file in evals directory in `<dataset_name>` so for instance if you have previously used `L` on two maps you can skip it in the future computations for said two maps.   
+
 
 # Parameters
 Parameters | Note
@@ -28,7 +30,7 @@ Parameters | Note
 [-t <match_distance_threshold>] | Default is 15 meters
 [-f] | force computation
 
-The `<compare_mode>` parameter will be used to determine which matching algorithm to use: `mm` (maximum cardinality matching), `wmm` maximum weight matching or `knn` 10-nearest-neighbor greedy matching
+The `<compare_mode>` parameter will be used to determine which matching algorithm to use: `mm` (maximum cardinality matching), `wmm` maximum weight matching or `knn` 10-nearest-neighbor greedy matching   
 
 All-in-One example:
 ```bash
@@ -43,7 +45,8 @@ python3 mapcompare.py data chicago james LCR -i 10 -b 30 -c wmm -t 10 -f
 
 # Map Cropper
 
-`MapCropper.py` follows the same directories as `mapcompare.py` you can crop ground truth maps located in `<dataset_name>/groundtruth` using Hidden Markov matching. The code only asks for `<dataset_name>` in `data/`. You will need a trajectories folder in `<dataset_name>` containing GPS trajectories.
+`MapCropper.py` follows the same directories as `mapcompare.py` you can crop ground truth maps located in `<dataset_name>/groundtruth` using Hidden Markov matching.    
+The code only asks for `<dataset_name>` in `data/`. You will need a trajectories folder in `<dataset_name>` containing GPS trajectories.
 ![Chicago OSM cropped (red)](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/hmm.png)
 
 
@@ -58,11 +61,11 @@ python3 MapCropper.py
 
 # Visualizer
 
-In order to properly run this tool, the file structure should look as it is in the data folder.
-This tool can be used to visualize reconstructed maps and their precision/recall evaluations
-For the background map/Contextily to work you need a working internet connection.
-`Visualizer.py` follows the same directories as `mapcompare.py`.
-Each `<dataset_name>` needs a `<dataset_name>.yml` file containing its corresponding EPSG code in this format: `EPSG:<number>` e.g. `EPSG:4326`
+***In order to properly run this tool, the file structure should look as it is in the data folder.***   
+This tool can be used to visualize reconstructed maps and their precision/recall evaluations.    
+For the background map/Contextily to work you need a working internet connection.    
+`Visualizer.py` follows the same directories as `mapcompare.py`.       
+Each `<dataset_name>` needs a `<dataset_name>.yml` file containing its corresponding EPSG code in this format: `EPSG:<number>` e.g. `EPSG:4326`      
 
 ```bash
 python3 Visualizer.py
