@@ -45,8 +45,8 @@ python3 mapcompare.py data chicago james LCR -i 10 -b 30 -c wmm -t 10 -f
 
 # Map Cropper
 
-`MapCropper.py` follows the same directories as `mapcompare.py` you can crop ground truth maps located in `<dataset_name>/groundtruth` using Hidden Markov matching.      
-The code only asks for `<dataset_name>` in `data/`. You will need a trajectories folder in `<dataset_name>` containing GPS trajectories.    
+`MapCropper.py` follows the same directories as `mapcompare.py` and can be used to crop ground truth maps located in `<dataset_name>/groundtruth` using Hidden Markov matching.      
+The code only asks for `<dataset_name>` in `data/`. You will need a `trajectories` folder in `<dataset_name>` containing GPS trajectories.    
 
 ![Chicago OSM cropped (red)](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/hmm.png)
 
@@ -66,7 +66,10 @@ python3 MapCropper.py
 This tool can be used to visualize reconstructed maps and their precision/recall evaluations.    
 For the background map/Contextily to work you need a working internet connection.    
 `Visualizer.py` follows the same directories as `mapcompare.py`.       
-Each `<dataset_name>` needs a `<dataset_name>.yml` file containing its corresponding EPSG code in this format: `EPSG:<number>` e.g. `EPSG:4326`      
+Each `<dataset_name>` needs a `<dataset_name>.yml` file containing its corresponding EPSG code in this format: `EPSG:<number>` e.g. `EPSG:4326`    
+
+
+![Visualizer](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/Legend_picking.gif)      
 
 ```bash
 python3 Visualizer.py
