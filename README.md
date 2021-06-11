@@ -45,8 +45,9 @@ python3 mapcompare.py data chicago james LCR -i 10 -b 30 -c wmm -t 10 -f
 
 # Map Cropper
 
-`MapCropper.py` follows the same directories as `mapcompare.py` you can crop ground truth maps located in `<dataset_name>/groundtruth` using Hidden Markov matching.    
-The code only asks for `<dataset_name>` in `data/`. You will need a trajectories folder in `<dataset_name>` containing GPS trajectories.
+`MapCropper.py` follows the same directories as `mapcompare.py` you can crop ground truth maps located in `<dataset_name>/groundtruth` using Hidden Markov matching.      
+The code only asks for `<dataset_name>` in `data/`. You will need a trajectories folder in `<dataset_name>` containing GPS trajectories.    
+
 ![Chicago OSM cropped (red)](https://github.com/Erfanh1995/GraphSamplingToolkit/blob/main/figs/hmm.png)
 
 
@@ -72,7 +73,6 @@ python3 Visualizer.py
 ```
 
 # Dependency
-* Dependencies:
 * [Fiona](https://pypi.org/project/Fiona/) (geographical operations)
 * [Pandas](https://pypi.org/project/pandas/) (data handling)
 * [GeoPandas](https://pypi.org/project/geopandas/) (geographical data handling)
