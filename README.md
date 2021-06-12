@@ -20,7 +20,8 @@ The `<mode>` string will be used to determine which computations to do. Each of 
 
 Each of these steps creates a file in evals directory in `<dataset_name>` so for instance if you have previously used `L` on two maps you can skip it in the future computations for said two maps.   
 
-Your input maps have to be in the same coordinate system. Please take a look at the example input files. ***input files must be in Lon Lat foramt ***  
+Your input maps have to be in the same coordinate system. Please take a look at the example input files.  
+***input files must be in Lon Lat format***  
 
 
 # Parameters
