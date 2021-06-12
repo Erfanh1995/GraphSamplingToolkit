@@ -14,11 +14,11 @@ python3 mapcompare.py <data_folder> <dataset_name> <solution_name> <mode>
 `<solution_name>` name of the reconstructed map in `<data_folder>/<dataset_name>/algorithm` directory
 
 The `<mode>` string will be used to determine which computations to do. Each of the following computations corresponds with a letter:  
-- Computing sampling starting points/finding connected components: `L`
-- Comparing map against ground-truth/map1 against map2: `C`
-- Evaluating results/statistics: `R`
+- Computing sampling starting points/finding connected components on the input graphs: `L`
+- Comparing reconstructed map against ground-truth/map1 against map2: `C`
+- Evaluating and printing results/statistics: `R`
 
-Each of these steps creates a file in evals directory in `<dataset_name>` so for instance if you have previously used `L` on two maps you can skip it in the future computations for said two maps.   
+Each of these steps creates a file in `evals` folder in `<dataset_name>` directory so for instance if you have previously used `L` on two maps you can skip it in the future computations for said two maps.   
 
 Your input maps have to be in the same coordinate system. Please take a look at the example input files.  
 ***input files must be in Lon Lat format***  
@@ -27,13 +27,13 @@ Your input maps have to be in the same coordinate system. Please take a look at 
 # Parameters
 Parameters | Note
 --------------------- | -------------
-[-i <breadcrumb_interval>]  | Default is 5 meters
+[-i <sampling_interval>]  | Default is 5 meters
 [-b <bearing_limit>]  | Default is 45 degrees
 [-c <compare_mode>] | There are three options: mm, wmm and knn. Default is knn (fast greedy algorithm).
 [-t <match_distance_threshold>] | Default is 15 meters
 [-f] | force computation
 
-The `<compare_mode>` parameter will be used to determine which matching algorithm to use: `mm` (maximum cardinality matching), `wmm` maximum weight matching or `knn` 10-nearest-neighbor greedy matching   
+The `<compare_mode>` parameter will be used to determine which matching algorithm to use: `mm` (maximum cardinality matching), `wmm` (maximum weight matching) or `knn` (10-nearest-neighbor greedy matching)   
 
 All-in-One example:
 ```bash
