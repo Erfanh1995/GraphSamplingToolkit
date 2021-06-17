@@ -9,9 +9,9 @@ python3 mapcompare.py <data_folder> <dataset_name> <solution_name> <mode>
 ```   
 `<data_folder>` is the path to the data folder e.g. `data`
 
-`<dataset_name>` name of the dataset folder inside `<data_folder>` e.g. `athens_small`
+`<dataset_name>` is the name of the dataset folder inside `<data_folder>` e.g. `athens_small`
 
-`<solution_name>` name of the reconstructed map in `<data_folder>/<dataset_name>/algorithm` directory
+`<solution_name>` is the name of the reconstructed map in `<data_folder>/<dataset_name>/algorithm` directory
 
 The `<mode>` string will be used to determine which computations to do. Each of the following computations corresponds with a letter:  
 - Computing sampling starting points/finding connected components on the input graphs: `L`
