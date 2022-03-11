@@ -1,7 +1,7 @@
 # Graph Sampling Evaluation
 
 Graph sampling is a method for map comparison. This program can be used to compare two input
-graphs globally, using a matching algorithms. The starting point of our implementation was Biagioni's code that he made available to us. Our code consists of 3 steps: generating a first point for the traversal on each connected component of the input graphs and returning a file, sampling all identified connected components and producing an evaluation file containing matched and unmatched samples and
+graphs globally, using a matching algorithm. The starting point of our implementation was Biagioni's code that he made available to us. Our code consists of 3 steps: generating a first point for the traversal on each connected component of the input graphs and returning a file, sampling all identified connected components and producing an evaluation file containing matched and unmatched samples and
 calculating precision, recall and F-score based on the evaluation file. Some options to set the matching algorithm, bearing threshold,
 sampling interval and match distance threshold are also available.   
 
