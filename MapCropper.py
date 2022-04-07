@@ -1,17 +1,22 @@
 #
 # Author: Erfan Hosseini Sereshgi (shosseinisereshgi@tulane.edu)
 # Company: Tulane University
-# Modified: 6/10/2021
+# Modified: 4/07/2022
 #
 import glob
 from leuvenmapmatching.matcher.distance import DistanceMatcher
 from leuvenmapmatching.map.inmem import InMemMap
 import math
+import sys
 
 #ground truth graph
 graph = {}
 
-data = input("Name of the dataset:")
+help_string = "Usage: python MapCropper.py <dataset>"
+if len(sys.argv) < 1:
+	print(help_string)
+	exit()
+data = sys.argv[1]
 
 #reading and adding vertices
 with open("data/"+data+"/groundtruth/"+data+"_vertices_osm.txt", 'r') as f1:
