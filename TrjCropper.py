@@ -94,14 +94,13 @@ def find_intersection(x,y,position):
 	return None
 
 if __name__ == '__main__':
-	help_string = "Usage: python TrjCropper.py <groundtruth_vertices_txt_file> <trajectories_folder>"
-	if len(sys.argv) < 2:
+	help_string = "Usage: python TrjCropper.py <dataset>"
+	if len(sys.argv) < 1:
 		print(help_string)
 		exit()
-	gt_file = sys.argv[1] # example: "/Users/erfan/Teleconverter/athens_large_vertices_osm.txt"
-	trj_folder = sys.argv[2] # example: "/Users/erfan//Trajectories/athens_large"
+	data = sys.argv[1] # example: "/Users/erfan/Teleconverter/athens_large_vertices_osm.txt"
 
-	with open(gt_file,'r') as f1:
+	with open("data/"+data+"/groundtruth/"+data+"_vertices_osm.txt",'r') as f1:
 		vertices = f1.readlines()
 		print("Done!")
 
@@ -116,10 +115,10 @@ if __name__ == '__main__':
 		if float(a[2]) < YLow:
 			YLow = float(a[2])
 
-	pathname = trj_folder+"/*.txt"
+	pathname = 'data/'+data+'/trajectories/*.txt'
 	files = glob.glob(pathname)
-	if not os.path.exists(trj_folder+"_cropped"):
-		os.makedirs(trj_folder+"_cropped")
+	if not os.path.exists('data/'+data+'/trajectories_cropped'):
+		os.makedirs('data/'+data+'/trajectories_cropped')
 	curr_traj = []
 	counter = 0
 	for name in files:
@@ -142,7 +141,7 @@ if __name__ == '__main__':
 					elif IsInBound(previous) == (0,0): # first point is IN, second point is OUT
 						last_point = find_intersection(previous,point,position) # find the last point and add it to curr_traj
 						curr_traj.append(last_point)
-						with open(trj_folder+"_cropped/trip_"+str(counter)+".txt",'w') as f4:
+						with open('data/'+data+'/trajectories_cropped'+"/trip_"+str(counter)+".txt",'w') as f4:
 							for item in curr_traj:
 								f4.write(str(item[0])+" "+str(item[1])+" "+str(item[2])+"\n")
 						print("file "+str(counter))
@@ -155,7 +154,7 @@ if __name__ == '__main__':
 						if first_point is not None and last_point is not None:
 							curr_traj.append(first_point)
 							curr_traj.append(last_point)
-							with open(trj_folder+"_cropped/trip_" + str(counter) + ".txt", 'w') as f4:
+							with open('data/'+data+'/trajectories_cropped'+"/trip_" + str(counter) + ".txt", 'w') as f4:
 								for item in curr_traj:
 									f4.write(str(item[0])+" "+str(item[1])+" "+str(item[2])+"\n")
 							print("file " + str(counter))
@@ -163,7 +162,7 @@ if __name__ == '__main__':
 							counter +=1
 				previous = point
 		if curr_traj != []:
-			with open(trj_folder+"_cropped/trip_" + str(counter) + ".txt", 'w') as f4:
+			with open('data/'+data+'/trajectories_cropped'+"/trip_" + str(counter) + ".txt", 'w') as f4:
 				for item in curr_traj:
 					f4.write(str(item[0]) + " " + str(item[1]) + " " + str(item[2]) + "\n")
 			print("file " + str(counter))
