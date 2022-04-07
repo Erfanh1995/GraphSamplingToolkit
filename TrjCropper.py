@@ -1,5 +1,6 @@
-# Author: Erfan Hosseini Sereshgi
-# Last edited: 04/07/2022
+# Author: Erfan Hosseini Sereshgi (shosseinisereshgi@tulane.edu)
+# Company: Tulane University
+# Modified: 4/07/2022
 
 import glob
 import sys
