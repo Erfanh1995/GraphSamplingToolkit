@@ -78,7 +78,7 @@ python3 MapCropper.py chicago
 
 
 # Trajectory Cropper
-Sometimes the trajectories cover an area bigger than the available ground truth. In that case one can use `TrjCropper.py` to crop the trajectories. This cropper keeps parts of edges that happen to be partially inside the ground truth bounding box and does not completely discard them. (probably one of its kind on the web AFAIK)
+Sometimes the trajectories cover an area larger than the available ground truth. In that case one can use `TrjCropper.py` to crop the trajectories. This cropper keeps parts of edges that happen to be partially inside the ground truth bounding box and does not completely discard them. (True cropping for trajectories)
 The code only asks for `<dataset_name>` in `data/`. You will need a `trajectories` folder in `<dataset_name>` containing GPS trajectories. The program creates a `trajectories_cropped` directory where the new trajectories will be stored.
 
 ```bash
