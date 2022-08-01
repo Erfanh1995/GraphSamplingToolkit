@@ -287,7 +287,7 @@ class PlotWindow(QtWidgets.QWidget):
 				mp2 = pd.DataFrame(matchedpoints2, columns=['x', 'y'])
 				mp2_converted = gpd.GeoDataFrame(mp2, geometry=gpd.points_from_xy(mp2.x, mp2.y), crs=epsg)
 				#mp2_converted = mp2_converted.to_crs(epsg=3857)
-				mp2_c = mp2_converted.plot(ax=axes, marker='x', color='pink', markersize=5, zorder=6, label="Matched on RCM")
+				mp2_c = mp2_converted.plot(ax=axes, marker='x', color='purple', markersize=5, zorder=6, label="Matched on RCM")
 
 				# Showing connected parts between matches/matchings
 				connected = pd.DataFrame(connected_edges, columns=['p1', 'p2'])
@@ -348,8 +348,8 @@ class PlotWindow(QtWidgets.QWidget):
 				ctx.add_basemap(axes, crs=epsg, source=ctx.sources._OSM_A) #
 			except:
 				print("Background map could not be found")
-		else:
-			axes.set_facecolor('#d3d3d3')
+		#else:
+			#axes.set_facecolor('#d3d3d3')
 
 		# Adding legend and making it dynamic
 		leg = axes.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
@@ -423,12 +423,18 @@ class PlotWindow(QtWidgets.QWidget):
 			msg.setDetailedText(details)
 			msg.exec_()
 
+		def save():
+			canvas.figure.savefig(data+" - "+algo+" ("+eval.split("_")[-1]+").svg", format="svg")
+
 		info = QtWidgets.QPushButton("Scores", )
 		info.clicked.connect(button_clicked)
+		save_vsg = QtWidgets.QPushButton("Save as SVG", )
+		save_vsg.clicked.connect(save)
 
 		# Creating toolbar, passing canvas as first param, parent (self, the MainWindow) as second.
 		toolbar = NavigationToolbar(canvas, self)
 		toolbar.addWidget(info)
+		toolbar.addWidget(save_vsg)
 
 		layout = QtWidgets.QVBoxLayout()
 		layout.addWidget(toolbar)
