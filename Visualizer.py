@@ -355,7 +355,7 @@ class PlotWindow(QtWidgets.QWidget):
 		leg = axes.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
 
 		labels = [t.get_text() for t in leg.texts]
-		handles = leg.legendHandles
+		handles = leg.legend_handles
 		label2handle = dict(zip(labels, handles))
 		handle2text = dict(zip(handles, leg.texts))
 
@@ -371,7 +371,7 @@ class PlotWindow(QtWidgets.QWidget):
 		lookup_handle.update(zip(handles, handles))
 		lookup_handle.update(zip(leg.texts, handles))
 
-		for artist in leg.texts + leg.legendHandles:
+		for artist in leg.texts + leg.legend_handles:
 			artist.set_picker(True)
 
 		def on_pick(event):
