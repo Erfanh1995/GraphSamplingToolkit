@@ -1,7 +1,7 @@
 # The Visualizer
 # Author: Erfan Hosseini Sereshgi (shosseinisereshgi@tulane.edu)
 # Company: Tulane University
-# Modified: 6/10/2021
+# Modified: 4/26/2025
 #
 import fiona
 import pandas as pd
@@ -345,7 +345,7 @@ class PlotWindow(QtWidgets.QWidget):
 		# Drawing background map
 		if bgmFlag is True:
 			try:
-				ctx.add_basemap(axes, crs=epsg, source=ctx.sources._OSM_A) #
+				ctx.add_basemap(axes, crs=epsg) #
 			except:
 				print("Background map could not be found")
 		#else:
